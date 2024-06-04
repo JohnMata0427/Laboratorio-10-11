@@ -1,0 +1,17 @@
+{
+  "tours": [
+    {
+      "id": "e75d1b57-947a-4d47-bb19-b7961a19d7f5",
+      "name": "Tour al Quilotoa",
+      "price": 15,
+      "photo": "quilotoa.png"
+    }
+  ],
+  "users": [
+    {
+      "id": "3d3d9529-fbc9-46bd-bd2a-27364f4f405f",
+      "password": "$2b$10$bIHCVk.xM5aF9BQ9CoxG8O2SunBOjx0qKIWYukiJVnQmPL30a.pMW",
+      "username": "John"
+    }
+  ]
+}
