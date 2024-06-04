@@ -1,0 +1,31 @@
+{
+  "legalCase": [
+    {
+      "id": "ac6a419a-bb40-47c4-9c0f-84f288e14943",
+      "nombreDelCaso": "Robo",
+      "delito": "Robo",
+      "introduccion": "Este es un caso es de robo de celulares en buses.",
+      "acontecimientos": [
+        "El robo ocurrió a las 2 PM.",
+        "El ladrón entró en el bus cuando abrio las puertas en San Roque.",
+        "Se llevaron celulares y salieron corriendo en la misma parada."
+      ],
+      "evidencias": [
+        {
+          "tipo": "video",
+          "descripcion": "Cámara de seguridad del captó al ssospechoso"
+        }
+      ],
+      "procesadosVinculados": [
+        {
+          "nombre": "Juan Perez",
+          "rol": "Sospechoso"
+        },
+        {
+          "nombre": "Maria Garcia",
+          "rol": "Victima"
+        }
+      ]
+    }
+  ]
+}
