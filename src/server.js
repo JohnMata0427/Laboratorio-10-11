@@ -2,7 +2,6 @@
 import express from 'express'
 import routerLegalCase from './routers/legalCase_router.js'
 
-
 // Inicializaciones
 const app = express()
 

@@ -8,6 +8,7 @@ const createLegalCaseController = async (req, res) => {
     }
     const legalCase = await legalCaseModel.createlegalCaseModel(newLegalCaseData)
 
+
     res.status(201).json(legalCase)
 }
 
