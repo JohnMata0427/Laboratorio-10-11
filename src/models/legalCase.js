@@ -1,45 +1,34 @@
-const legalCaseModel = {
-    async createlegalCaseModel (newLegalCase){
-        // Punto 1
-        const url = 'http://localhost:4000/legalCase'
-        const peticion= await fetch(url, {
-            method:'POST',
-            body:JSON.stringify(newLegalCase),
-            headers:{'Content-Type': 'application/json'}
-        })
-        const data = await peticion.json()
+import mongoose from 'mongoose';
 
-        // Punto 2
-        return data
+const legalCaseSchema = new mongoose.Schema({
+    id: {
+        type: String,
+        required: true
     },
-
-    async getAllLegalCaseModel(){
-        const url = 'http://localhost:4000/legalCase'
-        const peticion = await fetch(url)
-        const data = await peticion.json()
-        return data
+    nombredelCaso: {
+        type: String,
+        required: true
     },
-    async updateLegalCaseModel(id,dataLegalCase){
-        const url = `http://localhost:4000/legalCase/${id}`
-        const peticion = await fetch(url,{
-            method:'PUT',
-            body: JSON.stringify(dataLegalCase),
-            headers: {'Content-Type': 'application/json'}
-    })
-    const data = await peticion.json()
-    return data 
+    delito: {
+        type: String,
+        required: true
     },
+    introduccion: {
+        type: String,
+        required: true
+    },
+    acontecimientos: {
+        type: Array,
+        required: true
+    },
+    evidencias: {
+        type: Object,
+        required: true
+    },
+    procesados: {
+        type: Array,
+        required: true
+    },
+});
 
-    async deleteLegalCaseModel(id){
-        const url = `http://localhost:4000/legalCase/${id}`
-        const peticion = await fetch(url, {
-            method: 'DELETE'
-        })
-
-        await peticion.json()
-
-        return {msg: "Caso legal eliminado correctamente"}
-    }
-}
-
-export default legalCaseModel
+export default mongoose.model('LegalCase', legalCaseSchema);

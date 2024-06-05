@@ -2,56 +2,24 @@ import legalCaseModel from "../models/legalCase.js"
 import { v4 as uuidv4 } from 'uuid'
 
 const createLegalCaseController = async (req, res) => {
-    const newLegalCaseData = {
-        id: uuidv4(),
-        ...req.body
-    }
-    const legalCase = await legalCaseModel.createlegalCaseModel(newLegalCaseData)
-
-
-    res.status(201).json(legalCase)
+    const legalCase = legalCaseModel(req.body)
+    legalCase.save().then(data => res.json(data)).catch(err => res.json(err))
 }
 
 const getAllLegalCaseController = async ( req , res ) => {
-    try{
-        const legalCase = await legalCaseModel.getAllLegalCaseModel()
-        res.status(200).json(legalCase)
-    }catch(error){
-        res.status(500).json({message: error})
-    }
+    
 }
 
 const getLegalCaseByIDController = async (req, res) => {
-    try {
-         const { id } = req.params;
-         const legalCase = await legalCaseModel.getLegalCaseByIDModel(id);
-         const status = legalCase.error ? 404 : 200;
-         res.status(status).json(legalCase);
-    } catch (error) {
-         res.status(status).json({ msg: error });
-    }
+    
 }
 
 const updateLegalCaseController = async (req, res) =>{
-    const {id} = req.params
-    try{
-        const legalCase = await legalCaseModel.updateLegalCaseModel(id, req.body)
-        const status = legalCase.error ? 404:200
-        res.status(status).json(legalCase)
-    }catch(error){
-        res.status(500).json({msg:error})
-    }
+   
 }
 
 const deleteLegalCaseController = async (req, res) => {
-    const {id} = req.params
-    try {
-        const legalCase = await legalCaseModel.deleteLegalCaseModel(id)
-        const status = legalCase.error ? 404: 200
-        res.status(status).json(legalCase)
-    } catch (error) {
-        res.status(500).json({msg: error})
-    }
+    
 }
 
 export {
