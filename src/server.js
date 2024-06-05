@@ -13,7 +13,7 @@ app.use(express.json())
 
 // Rutas
 app.get('/', (req, res)=> res.send("Server on"))
-app.use('/api/v1/', routerLegalCase)
+app.use('/api/v1', routerLegalCase)
 
 // Exportar la variable
 export default app
