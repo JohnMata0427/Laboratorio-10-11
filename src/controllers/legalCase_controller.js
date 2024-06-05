@@ -20,6 +20,18 @@ const getAllLegalCaseController = async ( req , res ) => {
         res.status(500).json({message: error})
     }
 }
+
+const getLegalCaseByIDController = async (req, res) => {
+    try {
+         const { id } = req.params;
+         const legalCase = await legalCaseModel.getLegalCaseByIDModel(id);
+         const status = legalCase.error ? 404 : 200;
+         res.status(status).json(legalCase);
+    } catch (error) {
+         res.status(status).json({ msg: error });
+    }
+}
+
 const updateLegalCaseController = async (req, res) =>{
     const {id} = req.params
     try{
@@ -30,7 +42,6 @@ const updateLegalCaseController = async (req, res) =>{
         res.status(500).json({msg:error})
     }
 }
-
 
 const deleteLegalCaseController = async (req, res) => {
     const {id} = req.params
