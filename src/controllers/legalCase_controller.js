@@ -12,6 +12,16 @@ const createLegalCaseController = async (req, res) => {
     res.status(201).json(legalCase)
 }
 
+const getAllLegalCaseController = async ( req , res ) => {
+    try{
+        const legalCase = await legalCaseModel.getAllLegalCaseModel()
+        res.status(200).json(legalCase)
+    }catch(error){
+        res.status(500).json({message: error})
+    }
+}
+
 export {
-    createLegalCaseController
+    createLegalCaseController,
+    getAllLegalCaseController
 }

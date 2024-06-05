@@ -11,7 +11,15 @@ const legalCaseModel = {
 
         // Punto 2
         return data
+    },
+
+    async getAllLegalCaseModel(){
+        const url = 'http://localhost:4000/legalCase'
+        const peticion = await fetch(url)
+        const data = await peticion.json()
+        return data
     }
+    
 }
 
 export default legalCaseModel
