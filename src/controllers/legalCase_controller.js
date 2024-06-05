@@ -31,8 +31,21 @@ const updateLegalCaseController = async (req, res) =>{
     }
 }
 
+
+const deleteLegalCaseController = async (req, res) => {
+    const {id} = req.params
+    try {
+        const legalCase = await legalCaseModel.deleteLegalCaseModel(id)
+        const status = legalCase.error ? 404: 200
+        res.status(status).json(legalCase)
+    } catch (error) {
+        res.status(500).json({msg: error})
+    }
+}
+
 export {
     createLegalCaseController,
     getAllLegalCaseController,
-    updateLegalCaseController
+    updateLegalCaseController,
+    deleteLegalCaseController
 }

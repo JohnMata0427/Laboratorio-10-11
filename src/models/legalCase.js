@@ -28,6 +28,17 @@ const legalCaseModel = {
     })
     const data = await peticion.json()
     return data 
+    },
+
+    async deleteLegalCaseModel(id){
+        const url = `http://localhost:4000/legalCase/${id}`
+        const peticion = await fetch(url, {
+            method: 'DELETE'
+        })
+
+        await peticion.json()
+
+        return {msg: "Caso legal eliminado correctamente"}
     }
 }
 
