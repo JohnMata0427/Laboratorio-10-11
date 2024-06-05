@@ -20,8 +20,19 @@ const getAllLegalCaseController = async ( req , res ) => {
         res.status(500).json({message: error})
     }
 }
+const updateLegalCaseController = async (req, res) =>{
+    const {id} = req.params
+    try{
+        const legalCase = await legalCaseModel.updateLegalCaseModel(id, req.body)
+        const status = legalCase.error ? 404:200
+        res.status(status).json(legalCase)
+    }catch(error){
+        res.status(500).json({msg:error})
+    }
+}
 
 export {
     createLegalCaseController,
-    getAllLegalCaseController
+    getAllLegalCaseController,
+    updateLegalCaseController
 }
