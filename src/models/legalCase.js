@@ -1,10 +1,6 @@
 import mongoose from 'mongoose';
 
 const legalCaseSchema = new mongoose.Schema({
-    id: {
-        type: String,
-        required: true
-    },
     nombredelCaso: {
         type: String,
         required: true
