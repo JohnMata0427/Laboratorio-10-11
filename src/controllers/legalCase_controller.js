@@ -1,5 +1,4 @@
 import legalCaseModel from "../models/legalCase.js"
-import { v4 as uuidv4 } from 'uuid'
 
 const createLegalCaseController = async (req, res) => {
     try {

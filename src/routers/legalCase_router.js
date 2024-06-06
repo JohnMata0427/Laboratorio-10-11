@@ -3,10 +3,10 @@ import { createLegalCaseController , deleteLegalCaseController, getAllLegalCaseC
 
 const router = Router()
 
-router.post('/legalcase', createLegalCaseController)
-router.get('/legalcase', getAllLegalCaseController)
-router.put('/legalcase/:id', updateLegalCaseController)
-router.delete('/legalcase/:id', deleteLegalCaseController)
-router.get('/legalcase/:id',getLegalCaseByIDController)
+router.post('/legalcases', createLegalCaseController)
+router.get('/legalcases', getAllLegalCaseController)
+router.put('/legalcases/:id', updateLegalCaseController)
+router.delete('/legalcases/:id', deleteLegalCaseController)
+router.get('/legalcases/:id',getLegalCaseByIDController)
 
 export default router

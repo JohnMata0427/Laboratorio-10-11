@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/index.js",
-    "db": "json-server --watch db.json --port=4000",
     "start": "node src/index.js"
   },
   "keywords": [],
@@ -13,14 +12,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "json-server": "^1.0.0-beta.0",
-    "mongoose": "^8.4.1",
-    "uuid": "^9.0.1"
-  },
-  "devDependencies": {
-    "morgan": "^1.10.0"
+    "mongoose": "^8.4.1"
   }
 }
